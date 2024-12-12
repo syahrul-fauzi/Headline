@@ -5,21 +5,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
-    <link rel="stylesheet" href="{{asset "built/screen.css"}}">
+    <link rel="stylesheet" href="{{asset 'built/screen.css'}}">
 
     {{ghost_head}}
 </head>
 
-<body class="{{body_class}}{{{block "body_class"}}} is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}{{#is "tag"}}{{#if tag.feature_image}} is-head-transparent{{/if}}{{/is}}{{#match @custom.header_style "Accent color"}} is-head-brand{{/match}}{{#match @custom.header_style "Dark"}} is-head-dark{{/match}}">
+<body class="{{body_class}}{{{block "body_class"}}} 
+    is-head-{{#match @custom.navigation_layout "Logo on the left"}}left-logo
+    {{else match @custom.navigation_layout "Logo in the middle"}}middle-logo
+    {{else}}stacked{{/match}}
+    {{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}
+    {{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}
+    {{#is "tag"}}{{#if tag.feature_image}} is-head-transparent{{/if}}{{/is}}
+    {{#match @custom.header_style "Accent color"}} is-head-brand{{/match}}
+    {{#match @custom.header_style "Dark"}} is-head-dark{{/match}}">
+
 <div class="gh-site">
 
-    {{> "header"}} <!-- Modular Header -->
+    {{> "header"}}
 
+    <!-- Main Content -->
+    <main class="gh-main-content">
+        {{{body}}}
+    </main>
 
-    {{{body}}}
-
-     {{> "footer"}} <!-- Modular Footer -->
-
+    {{> "footer"}}
 
 </div>
 
@@ -27,7 +37,7 @@
     {{> "pswp"}}
 {{/is}}
 
-<script src="{{asset "built/main.min.js"}}"></script>
+<script src="{{asset 'built/main.min.js'}}"></script>
 
 {{ghost_foot}}
 

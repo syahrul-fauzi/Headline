@@ -20,6 +20,19 @@ figcaption {
     font-size: 1.3rem;
 }
 
+.gh-article-image {
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+.gh-image-caption {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+    font-style: italic;
+}
+
 .has-full-image figcaption {
     padding: 0 16px;
 }

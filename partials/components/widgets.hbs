@@ -1,0 +1,8 @@
+<div class="widgets">
+    <h4>Popular Posts</h4>
+    <ul>
+        {{#foreach posts limit="5"}}
+            <li><a href="{{url}}">{{title}}</a></li>
+        {{/foreach}}
+    </ul>
+</div>
